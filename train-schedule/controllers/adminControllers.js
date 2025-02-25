@@ -12,7 +12,7 @@ exports.addTrain = (req, res) => {
     }
 
     Train.addTrain({ name, from, to, departure, arrival });
-    res.redirect('/admin'); // ✅ Повернення в адмінку після додавання
+    res.redirect('/admin'); 
 };
 
 exports.deleteTrain = (req, res) => {

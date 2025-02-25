@@ -44,7 +44,7 @@ exports.deleteTrain = (id) => {
     console.log(`📢 Видалення потяга ID: ${id}`);
     let trains = loadTrains();
 
-    id = Number(id);  // 🔥 Переконаємось, що ID є числом
+    id = Number(id);  
 
     const initialLength = trains.length;
     trains = trains.filter(train => train.id !== id);
@@ -59,12 +59,11 @@ exports.deleteTrain = (id) => {
     return true;
 };
 
-// 🔥 Додана функція пошуку
+
 exports.search = (from, to) => {
     console.log(`📢 Викликано пошук потягів: з ${from} до ${to}`);
     const trains = loadTrains();
 
-    // Порівнюємо назви станцій без урахування регістру
     return trains.filter(train => 
         train.from.toLowerCase() === from.toLowerCase() &&
         train.to.toLowerCase() === to.toLowerCase()

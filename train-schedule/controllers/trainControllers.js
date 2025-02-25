@@ -1,4 +1,4 @@
-const Train = require('../models/Train.js'); // ✅ Впевнись, що правильно підключено
+const Train = require('../models/Train.js'); 
 
 exports.searchTrains = (req, res) => {
     const { from, to } = req.query;
@@ -9,10 +9,10 @@ exports.searchTrains = (req, res) => {
     }
 
     const results = Train.search(from, to);
-    res.render('search', { results, from, to }); // ✅ Має бути 'search', без '.ejs'
+    res.render('search', { results, from, to }); 
 };
 
 exports.getAllTrains = (req, res) => {
-    const trains = Train.getAll(); // Переконайтеся, що getAll() існує в моделі
+    const trains = Train.getAll(); 
     res.render('trains/index', { trains });
 };

@@ -15,7 +15,7 @@
             <a href="/admin">Адмін-панель</a>
         </nav>
 
-        <!-- ✅ Форма додавання потяга -->
+
         <form action="/admin/add" method="POST" class="form-group">
             <h2>➕ Додати потяг</h2>
             <input type="text" name="name" placeholder="Назва потяга" required>
@@ -25,7 +25,7 @@
             <button type="submit">Додати</button>
         </form>
 
-        <!-- ✅ Список потягів (отримуємо з сервера) -->
+
         <h2>📋 Список потягів</h2>
         <ul class="train-list">
             <% trains.forEach(train => { %>
@@ -34,7 +34,7 @@
                     З: <%= train.from %> → До: <%= train.to %> |
                     Час: <%= train.time %>
                     
-                    <!-- Кнопка видалення -->
+
                     <form action="/admin/delete" method="POST" class="delete-form">
                         <input type="hidden" name="id" value="<%= train.id %>">
                         <button type="submit" class="delete-btn">🗑 Видалити</button>
